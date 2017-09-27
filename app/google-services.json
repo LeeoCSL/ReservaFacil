@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "136029759526",
+    "firebase_url": "https://reservafacil-4b91a.firebaseio.com",
+    "project_id": "reservafacil-4b91a",
+    "storage_bucket": "reservafacil-4b91a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136029759526:android:e0480a2b7342cd53",
+        "android_client_info": {
+          "package_name": "leonardoribeiro.reservafacil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136029759526-44cboa8ffbm1bl06mksq69lokvk4ruea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "leonardoribeiro.reservafacil",
+            "certificate_hash": "386d5445f5e573c90e1513c7b0659622eeeaec02"
+          }
+        },
+        {
+          "client_id": "136029759526-7310umopgi8s4hloei8tj6s0ilbli9jk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe7b5kJlH57yh9qGBBJ9-wA7DaXWgshxs"
+        },
+        {
+          "current_key": "AIzaSyADxYgrEMyhRkpK1qSSuJfH1s76YXuE5OY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136029759526-7310umopgi8s4hloei8tj6s0ilbli9jk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
