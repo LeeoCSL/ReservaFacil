@@ -10,6 +10,7 @@
     <include
         android:id="@+id/tb"
         layout="@layout/toolbar"
+
         />
 
         <TextView
@@ -19,19 +20,26 @@
             android:text="Selecione o restaurante"
             android:textSize="20sp"
             android:layout_below="@+id/tb"
-            android:layout_margin="10dp"/>
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+           />
+
 
     <Spinner
+        android:id="@+id/spRestaurante"
         android:layout_width="300dp"
         android:layout_height="20dp"
         android:layout_below="@+id/txtSelecione"
-        android:id="@+id/spinner"
         android:layout_margin="10dp"
        >
 
-
-
     </Spinner>
+
+
+
+
+
 
 
 

@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(user != null){
                     //signed in
                     Toast.makeText(LoginActivity.this, "login", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
                     startActivity(intent);
                 }
                 else{
