@@ -33,6 +33,7 @@ public class Main2Activity extends AppCompatActivity
 
         btnReservar = (Button) findViewById(R.id.btnReservar);
 
+        setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
