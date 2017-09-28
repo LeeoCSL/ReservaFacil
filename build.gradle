@@ -16,9 +16,20 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+<<<<<<< HEAD
         maven { url 'https://jitpack.io' }
         maven { url 'https://maven.fabric.io/public' }
 
+||||||| merged common ancestors
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+=======
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+        maven { url 'https://jitpack.io' }
+>>>>>>> nav_bar
     }
 }
 

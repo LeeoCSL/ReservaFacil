@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "leonardoribeiro.reservafacil"
-        minSdkVersion 24
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -20,11 +20,18 @@ android {
 }
 
 dependencies {
+<<<<<<< HEAD
 
 //    compile 'com.github.Vatican-Cameos:CarouselPicker:v1.0'
     compile 'com.azoft.carousellayoutmanager:carousel:1.2.1'
 //    compile 'com.synnapps:carouselview:0.1.4'
 
+||||||| merged common ancestors
+=======
+
+    //carousel
+
+>>>>>>> nav_bar
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -36,5 +43,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
 }
+
+
+
+
 
 apply plugin: 'com.google.gms.google-services'
