@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "login", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
                     startActivity(intent);
+                    LoginActivity.this.finish();
                 }
                 else{
                     // signed out

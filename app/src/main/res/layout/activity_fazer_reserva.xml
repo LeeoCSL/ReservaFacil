@@ -28,13 +28,25 @@
 
     <Spinner
         android:id="@+id/spRestaurante"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_below="@+id/txtSelecione"
         android:layout_margin="10dp"
+        android:background="@color/branco"
        >
+        
+
 
     </Spinner>
+
+    <ImageView
+        android:id="@+id/ivRestaurante"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/spRestaurante"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        />
 
 
 
