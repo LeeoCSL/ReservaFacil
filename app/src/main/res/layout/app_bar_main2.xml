@@ -67,7 +67,8 @@
         android:layout_below="@+id/btnReservar"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
-        android:text="Verificar Reserva" />
+        android:text="Verificar Reserva"
+        android:onClick="VerificarReserva"/>
 
     <Button
         android:id="@+id/btnCancelar"

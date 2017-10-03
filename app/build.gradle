@@ -21,6 +21,12 @@ android {
 
 dependencies {
 
+    //Butter Knife
+    compile('com.jakewharton:butterknife:8.5.1') {
+        exclude module: 'support-annotations'
+        exclude module: 'support-compat'
+    }
+
 
 //    compile 'com.github.Vatican-Cameos:CarouselPicker:v1.0'
     compile 'com.azoft.carousellayoutmanager:carousel:1.2.1'
@@ -36,7 +42,7 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:10.0.1'
     compile 'com.firebaseui:firebase-ui-auth:1.1.1'
     testCompile 'junit:junit:4.12'
-
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 }
 
 

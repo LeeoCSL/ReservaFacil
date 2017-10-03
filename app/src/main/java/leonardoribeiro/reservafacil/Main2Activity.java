@@ -1,7 +1,9 @@
 package leonardoribeiro.reservafacil;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -22,7 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private Button btnReservar;
+    private Button btnReservar, btnVerificar;
 
     private Toast toast;
     private long lastBackPressTime = 0;
@@ -35,6 +37,7 @@ public class Main2Activity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         btnReservar = (Button) findViewById(R.id.btnReservar);
+        btnVerificar = (Button) findViewById(R.id.btnVerificar);
 
         setSupportActionBar(toolbar);
 
@@ -54,6 +57,17 @@ public class Main2Activity extends AppCompatActivity
                 startActivity(intent);
             }
         });
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+
+
+
+
+    }
+
+    public void VerificarReserva(View view){
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        String nome = sp.getString("nome", "");
+        Toast.makeText(this, "Voce tem uma reserva ativa em: "+sp.getString("nome", ""), Toast.LENGTH_SHORT).show();
 
     }
 
