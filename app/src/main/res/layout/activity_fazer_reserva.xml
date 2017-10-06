@@ -17,7 +17,7 @@
             android:id="@+id/txtSelecione"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Selecione o restaurante"
+            android:text="Selecione o restaurante:"
             android:textSize="20sp"
             android:layout_below="@+id/tb"
             android:layout_marginTop="30dp"
@@ -28,11 +28,11 @@
 
     <Spinner
         android:id="@+id/spRestaurante"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="20dp"
         android:layout_below="@+id/txtSelecione"
         android:layout_margin="10dp"
-        android:background="@color/branco"
+
        >
         
 
@@ -41,21 +41,57 @@
 
     <ImageView
         android:id="@+id/ivRestaurante"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
         android:layout_below="@+id/spRestaurante"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         />
+    <TextView
+        android:id="@+id/txtNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecione a quantidade de pessoas:"
+        android:textSize="20sp"
+        android:layout_below="@+id/ivRestaurante"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
+        android:id="@+id/NP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtNum"
+        android:layout_centerHorizontal="true"
+        app:snp_buttonIconLeft="@drawable/ic_action_name"
+        app:snp_buttonIconRight="@drawable/ic_action_name2"
+        app:snp_maxValue="10"
+        app:snp_minValue="1"
+        app:snp_value="1"
+        app:snp_stepSize="1"
+        app:snp_updateInterval="10"
+        app:snp_orientation="horizontal"
+        android:background="@drawable/number_picker_bg"
+        android:layout_margin="10dp"
+        app:snp_valueMarginStart="8dp"
+        app:snp_valueMarginEnd="8dp"
+        />
+
+
+
+
+
+
 
     <Button
         android:id="@+id/btnReservar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ivRestaurante"
+        android:layout_below="@+id/NP"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:onClick="showElemento"
+        android:onClick="reservar"
         android:text="Reservar"/>
 
 

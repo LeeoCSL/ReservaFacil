@@ -64,10 +64,24 @@ public class Main2Activity extends AppCompatActivity
 
     }
 
-    public void VerificarReserva(View view){
+    public void verificarReserva(View view){
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         String nome = sp.getString("nome", "");
-        Toast.makeText(this, "Voce tem uma reserva ativa em: "+sp.getString("nome", ""), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Voce tem uma reserva ativa em: "+nome, Toast.LENGTH_SHORT).show();
+
+    }
+
+
+    public void cancelarReserva(View view){
+
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sp.edit();
+        String nome = sp.getString("nome", "");
+        Toast.makeText(this, "Sua reserva no restaurante: " + nome+ " foi cancelada com sucesso", Toast.LENGTH_SHORT).show();
+
+        editor.putString("nome", " ");
+        editor.commit();
+
 
     }
 

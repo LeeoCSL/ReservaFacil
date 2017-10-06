@@ -1,5 +1,6 @@
 package leonardoribeiro.reservafacil;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +10,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +33,8 @@ public class FazerReserva extends AppCompatActivity {
 
     @BindView(R.id.tb)
     Toolbar mToolbar;
+
+   ScrollableNumberPicker NP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,21 +80,21 @@ public class FazerReserva extends AppCompatActivity {
             }
         });
 
-
-
+    NP = (ScrollableNumberPicker) findViewById(R.id.NP);
 
     }
 
-    public void showElemento(View view){
+    public void reservar(View view){
         String nome = (String) sp.getSelectedItem();
-        long id = sp.getSelectedItemId();
-        int posicao = sp.getSelectedItemPosition();
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("nome", nome);
         editor.commit();
-        Toast.makeText(this, "Seus dados foram enviados ao restaurante: " + nome+ "\n Verifique sua reserva em 'verificar reservas'", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Seus dados foram enviados ao restaurante: " + nome+ "\nVerifique sua reserva em 'verificar reservas'", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Sua reserva foi feita para "+ String.format(NP.getValue()+ " pessoa(s)"), Toast.LENGTH_SHORT).show();
+
+
 
     }
 

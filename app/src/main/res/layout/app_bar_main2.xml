@@ -68,7 +68,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         android:text="Verificar Reserva"
-        android:onClick="VerificarReserva"/>
+        android:onClick="verificarReserva"/>
 
     <Button
         android:id="@+id/btnCancelar"
@@ -77,7 +77,8 @@
         android:layout_below="@+id/btnVerificar"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
-        android:text="Cancelar Reserva" />
+        android:text="Cancelar Reserva"
+        android:onClick="cancelarReserva"/>
 
 
 </RelativeLayout>
