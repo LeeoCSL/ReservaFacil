@@ -31,5 +31,19 @@ public class DialogFactory extends AlertDialog {
             mDialog.dismiss();
         }
     }
+
+    public static void loadingDialog(Context context) {
+        mDialog = new ProgressDialog(context);
+        mDialog.setMessage("Por favor, aguarde.");
+        mDialog.setCancelable(false);
+        mDialog.setCanceledOnTouchOutside(false);
+        mDialog.show();
+    }
+
+    public static void hideLoadingDialog() {
+        if (mDialog.isShowing()) {
+            mDialog.dismiss();
+        }
+    }
 }
 

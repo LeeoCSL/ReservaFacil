@@ -3,10 +3,13 @@ package leonardoribeiro.reservafacil.activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -16,6 +19,7 @@ import com.facebook.CallbackManager;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseException;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +39,7 @@ import java.util.Date;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import leonardoribeiro.reservafacil.R;
+import leonardoribeiro.reservafacil.utils.DialogFactory;
 import leonardoribeiro.reservafacil.utils.TextUtils;
 import leonardoribeiro.reservafacil.utils.ToastUtils;
 
@@ -266,6 +271,76 @@ public class LoginActivity extends AppCompatActivity {
         bundle.putLong("tempo_digitacao", dtfs);
         mFA.logEvent("tempo_digitacao", bundle);
 
+    }
+
+    public void forgetPassword(View v) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Email");
+
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+
+        builder.setView(input);
+
+        builder.setPositiveButton("Enviar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                String email = input.getText().toString().trim();
+
+                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putString("email_reset", email);
+                editor.commit();
+
+                if (!android.text.TextUtils.isEmpty(email)) {
+                    DialogFactory.loadingDialog(LoginActivity.this);
+                    resetPassword(email);
+                    dialog.dismiss();
+                } else {
+
+                }
+            }
+        });
+
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
+    }
+
+    public void resetPassword(String email) {
+        mFirebaseAuth.sendPasswordResetEmail(email)
+                .addOnSuccessListener(this, new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+
+                        DialogFactory.hideLoadingDialog();
+                        Toast.makeText(LoginActivity.this, "Acabamos de te enviar as instruções de como recuperar sua conta.", Toast.LENGTH_LONG).show();
+                    }
+                }).addOnFailureListener(this, new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                DialogFactory.hideLoadingDialog();
+                if (e.getClass() == FirebaseAuthInvalidUserException.class) {
+
+                    Toast.makeText(LoginActivity.this,
+                            "Usuário não encontrado", Toast.LENGTH_LONG).show();
+
+                    return;
+                }
+                if (e.getClass() == FirebaseException.class) {
+
+                    Toast.makeText(LoginActivity.this,
+                            "Email inválido", Toast.LENGTH_LONG).show();
+                }
+                e.printStackTrace();
+            }
+        });
     }
 
 
