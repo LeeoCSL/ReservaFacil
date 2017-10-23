@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fundo"
-    tools:context="leonardoribeiro.reservafacil.MainActivity">
+    tools:context="leonardoribeiro.reservafacil.activity.MainActivity">
 
     <include
         layout="@layout/toolbar"

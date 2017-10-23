@@ -1,4 +1,4 @@
-package leonardoribeiro.reservafacil;
+package leonardoribeiro.reservafacil.activity;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+
+import leonardoribeiro.reservafacil.R;
 
 public class SplashScreen extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package leonardoribeiro.reservafacil;
+package leonardoribeiro.reservafacil.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,6 +19,7 @@ import com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import leonardoribeiro.reservafacil.R;
 
 public class FazerReserva extends AppCompatActivity {
 

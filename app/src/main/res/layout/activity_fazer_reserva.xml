@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="leonardoribeiro.reservafacil.FazerReserva"
+    tools:context="leonardoribeiro.reservafacil.activity.FazerReserva"
     android:background="@color/fundo">
 
     <include

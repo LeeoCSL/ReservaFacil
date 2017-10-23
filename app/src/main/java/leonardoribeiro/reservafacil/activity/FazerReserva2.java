@@ -1,4 +1,4 @@
-package leonardoribeiro.reservafacil;
+package leonardoribeiro.reservafacil.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import com.azoft.carousellayoutmanager.CenterScrollListener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import leonardoribeiro.reservafacil.R;
+
 public class FazerReserva2 extends AppCompatActivity {
     @BindView(R.id.tb)
     Toolbar mToolbar;

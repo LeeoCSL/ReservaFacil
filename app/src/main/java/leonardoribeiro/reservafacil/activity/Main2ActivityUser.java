@@ -1,11 +1,9 @@
-package leonardoribeiro.reservafacil;
+package leonardoribeiro.reservafacil.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,10 +16,11 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Main2Activity extends AppCompatActivity
+import leonardoribeiro.reservafacil.R;
+
+public class Main2ActivityUser extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Button btnReservar, btnVerificar;
@@ -32,7 +31,7 @@ public class Main2Activity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main2_user);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -53,7 +52,7 @@ public class Main2Activity extends AppCompatActivity
         btnReservar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main2Activity.this, FazerReserva.class);
+                Intent intent = new Intent(Main2ActivityUser.this, FazerReserva.class);
                 startActivity(intent);
             }
         });
